@@ -2,8 +2,8 @@ version: "3"
 
 services:
   adguard-unbound:
-    container_name: adguard-unbound
-    image: lolgast/adguard-unbound
+    container_name: adguardhome-unbound
+    image: dieucq/adguardhome-unbound
     restart: unless-stopped
     hostname: adguard-unbound
     # Volumes store your data between container upgrades
