@@ -1,16 +1,17 @@
+## This repository is forked from hat3ph (https://github.com/hat3ph), I just corrected some info in the compose file to match my demand. Thank you, hat3ph!
 ## Safe Internet with Adguard and Unbound - Solution
 This solution is a combination of AdGuard and Unbound in a docker-compose project with the intent of enabling users to quickly and easily create and deploy a personally managed ad blocking capabilities , family safe search, parental controls (via AdGuard), and DNS caching with additional privacy options and DNSSEC validation (via Unbound). 
 
 Docker Compose file contains:
-- adguard-unbound - https://hub.docker.com/r/lolgast/adguard-unbound
+- adguardhome-unbound - https://hub.docker.com/r/dieucq/adguardhome-unbound
 
 Contains initial unbound.conf as well.
 
 ## Prerequisites:
 - Install docker: https://docs.docker.com/engine/install/
-- Install docker-compose: https://docs.docker.com/compose/install/
-- Run docker as non-root: https://docs.docker.com/engine/install/linux-postinstall/
-- Run `disable_dnsstublistener.sh` first to disable systemd-resolved DNS stub listener.
+- Install docker-compose: https://docs.docker.com/compose/install/ (for present docker, the docker-compose is installed during process of docker installation, so this is no longer needed)
+- Run docker as non-root: https://docs.docker.com/engine/install/linux-postinstall/ (If you are in root access of terminal, then you don't have to proceed this step)
+- Run `disable_dnsstublistener.sh` first to disable systemd-resolved DNS stub listener. (This .sh need to be executed if port 53 is listened by another app)
 - Install dns-root-data (ubuntu) package for the DNSSEC key and root hints.
 - ☁ If using a cloud provider, you need to allow ingress for below port:
 
@@ -30,7 +31,7 @@ Contains initial unbound.conf as well.
 ## Quickstart
 To get started all you need to do is git clone the repository and spin up the containers.
 ```bash
-git clone https://github.com/hat3ph/docker-adguard-unbound.git
+git clone https://github.com/Kopi1984/docker-adguard-unbound.git
 cd docker-adguard-unbound
 docker compose up -d
 ```
